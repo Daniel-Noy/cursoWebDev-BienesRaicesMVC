@@ -36,7 +36,7 @@ function versionWebp() {
 }
 
 
-function watch() {
+function watchPaths() {
     watch(paths.js, javascript);
     // watch(paths.imagenes, imagenes);
     // watch(paths.imagenes, versionWebp);
@@ -44,5 +44,5 @@ function watch() {
 
 exports.webp = versionWebp;
 exports.javascript = javascript;
-exports.watch = watch;
+exports.watch = watchPaths;
 exports.default = parallel(javascript, versionWebp); 
