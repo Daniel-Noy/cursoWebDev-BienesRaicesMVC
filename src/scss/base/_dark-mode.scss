@@ -1,0 +1,45 @@
+@use './variables' as v;
+
+.dark-mode {
+    color: v.$blanco;
+    background-color: darken(v.$gris-oscuro, 10);
+
+    .dark-mode-boton {
+        filter: none;
+    }
+
+    .anuncios-contenedor {
+        .anuncio {
+            border-color: darken(v.$gris-oscuro, 13);
+            background-color: v.$gris-oscuro;
+        }
+
+        .habitaciones {
+            img {
+                filter: invert(100%);
+            }
+        }
+    }
+
+
+    .formulario {
+        p,
+        legend,
+        select {
+            color: v.$blanco;
+        }
+        
+        fieldset {
+        color: v.$gris;
+        border-color: v.$gris;
+        }
+
+        input:not([type="radio"], [type="submit"]),
+        textarea,
+        select {
+            color: v.$blanco;
+            border-color: v.$gris;
+            background-color: v.$gris-oscuro;
+        }
+    }
+}
