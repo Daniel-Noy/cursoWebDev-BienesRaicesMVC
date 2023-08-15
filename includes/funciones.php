@@ -97,3 +97,7 @@ function validarORedireccionar(string $url, string $metodo = "GET") {
 
     return $id;
 }
+
+function current_page(string $path) : bool {
+    return str_contains($_SERVER['PATH_INFO'] ?? '/', $path);
+}

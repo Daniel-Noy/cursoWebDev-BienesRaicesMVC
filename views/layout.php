@@ -38,6 +38,9 @@ $inicio = $inicio ?? null;
                     <a href="/propiedades">Anuncios</a>
                     <a href="/blog">Blog</a>
                     <a href="/contacto">Contacto</a>
+                    <?php if (!current_page('/admin')) { ?>
+                        <a href="/admin">Administrar</a>
+                    <?php } ?>
                     <?php if($auth) { ?>
                         <a href="/logout">Cerrar Sesion</a>
                     <?php } ?>
