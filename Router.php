@@ -15,13 +15,8 @@ class Router {
         $this->rutasPOST[$url] = $fn;
     }
 
-    public function comprobarRutas() {
-        session_start();
-        $auth = $_SESSION["login"] ?? null;
-
-        $rutasProtegidas = ["/admin", "/propiedades/crear", "/propiedades/editar"];
-
-
+    public function comprobarRutas() 
+    {
         $urlActual = $_SERVER["PATH_INFO"] ?? "/";
         $metodo = $_SERVER["REQUEST_METHOD"];
 
@@ -32,11 +27,6 @@ class Router {
             $fn = $this->rutasPOST[$urlActual] ?? NULL;
         }
 
-        if(in_array($urlActual, $rutasProtegidas) && !$auth) {
-            header("Location: /login");
-        }
-        
-
         if($fn) {
             call_user_func($fn, $this);
         } else {
@@ -44,8 +34,8 @@ class Router {
         }
     }
 
-    public function render($view, $datos = []) {
-
+    public function render($view, $datos = [])
+    {
         foreach($datos as $key => $value) {
             $$key = $value;
         }

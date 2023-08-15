@@ -8,27 +8,17 @@ function incluirTemplate(string $nombre, $inicio = false, $empty = false) {
     include TEMPLATES_URL . "/{$nombre}.php";
 }
 
-// Control de la sesion del usuario
-function autenticarSesion($private = false) {
-    if(!$_SESSION) {
+//? Funciones de autenticacion
+function isAuth() : void {
+    if (!isUser()) header('Location: /login');
+}
+
+function isUser() : bool {
+    if (!isset($_SESSION)) {
         session_start();
     }
 
-    $auth = $_SESSION["login"];
-
-    if($private) {
-        if(!$auth) {
-            header("Location: /");
-            return;
-        }
-    }
-
-    if($auth) {
-        return true;
-    }
-
-    return false;
-
+    return isset($_SESSION['usuario']);
 }
 
 // Helpers

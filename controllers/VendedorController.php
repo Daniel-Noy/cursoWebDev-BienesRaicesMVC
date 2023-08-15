@@ -5,8 +5,9 @@ use MVC\Router;
 use Model\Vendedor;
 
 class VendedorController {
-    public static function crear(Router $router) {
-        
+    public static function crear(Router $router)
+    {
+        isAuth();
         $vendedor = new Vendedor();
         $errores = Vendedor::getErrores();
 
@@ -30,8 +31,9 @@ class VendedorController {
         ]);
     }
 
-    public static function actualizar(Router $router) {
-
+    public static function actualizar(Router $router)
+    {
+        isAuth();
         $id = validarORedireccionar("/admin");
 
         $vendedor = Vendedor::find($id);
@@ -54,7 +56,9 @@ class VendedorController {
         ]);
     }
 
-    public static function eliminar() {
+    public static function eliminar()
+    {
+        isAuth();
         if($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $id = validarORedireccionar("/admin", "POST");

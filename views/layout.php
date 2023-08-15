@@ -1,7 +1,5 @@
 <?php 
-    $_SESSION = $_SESSION ?? null;
-
-if(!$_SESSION) {
+if (!isset($_SESSION)) {
     session_start();
 }
 
