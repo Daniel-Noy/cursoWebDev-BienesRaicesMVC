@@ -6,7 +6,7 @@ use Controllers\PropiedadController;
 use Controllers\VendedorController;
 use MVC\Router;
 
-require_once __DIR__ . "\..\includes\app.php";
+require_once __DIR__ . "/../includes/app.php";
 
 $router = new Router();
 $router->get("/admin", [PropiedadController::class, "index"]);
