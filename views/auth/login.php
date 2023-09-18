@@ -19,4 +19,6 @@
 
         <input type="submit" value="Iniciar sesion" class="boton-verde">
     </form>
+    <p>Admin: admin@correo.com</p>
+    <p>Contraseña: 123456</p>
 </main>

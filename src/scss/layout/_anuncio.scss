@@ -1,4 +1,13 @@
+@use '../base/mixins' as m;
+
 .propiedad-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    @include m.tablet {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
 
     .costo, .habitaciones, p {
         margin: 2rem 0;
@@ -6,5 +15,8 @@
     .habitaciones {
         max-width: 40rem;
     }
+}
 
+.propiedad {
+    min-height: 73vh;
 }

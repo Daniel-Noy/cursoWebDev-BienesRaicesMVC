@@ -5,7 +5,7 @@
     background-color: darken(v.$gris-oscuro, 10);
 
     .dark-mode-boton {
-        filter: none;
+        filter: invert(100%);
     }
 
     .anuncios-contenedor {
@@ -15,12 +15,19 @@
         }
 
         .habitaciones {
-            img {
+            img{
                 filter: invert(100%);
             }
         }
     }
 
+    .propiedad-contenedor {
+        .habitaciones {
+            img {
+                filter: invert(100%);
+            }
+        }
+    }
 
     .formulario {
         p,

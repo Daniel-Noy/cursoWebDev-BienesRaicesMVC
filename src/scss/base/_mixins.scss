@@ -49,3 +49,10 @@
         background-color: darken($color, $amount: 5);
     }
 }
+
+@mixin textClamp($num) {
+    display: -webkit-box;
+    -webkit-line-clamp: $num; /*Numero de lineas que se mostrarán*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

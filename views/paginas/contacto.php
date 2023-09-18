@@ -7,6 +7,7 @@
         <h2>Llena el formulario de contacto</h2>
 
         <form class="formulario" method="POST">
+            <p>(Formulario desactivado por demostracion)</p>
             <fieldset>
                 <legend>Informacion Personal</legend>
 
@@ -47,7 +48,7 @@
                 </div>
             </fieldset>
             
-            <input type="submit" value="Enviar" class="boton boton-verde">
+            <input type="submit" value="Enviar" disabled class="boton boton-verde">
         </form>
     </div>
 </main>
